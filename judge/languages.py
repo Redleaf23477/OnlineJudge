@@ -47,7 +47,7 @@ _c_lang_spj_compile = {
 
 _c_lang_spj_config = {
     "exe_name": "spj-{spj_version}",
-    "command": "{exe_path} {in_file_path} {user_out_file_path}",
+    "command": "{exe_path} {in_file_path} {user_out_file_path} {jury_ans_file_path}",
     "seccomp_rule": "c_cpp"
 }
 
@@ -75,7 +75,7 @@ int main() {
         "max_cpu_time": 10000,
         "max_real_time": 20000,
         "max_memory": 1024 * 1024 * 1024,
-        "compile_command": "/usr/bin/g++ -DONLINE_JUDGE -O2 -w -fmax-errors=3 -std=c++14 {src_path} -lm -o {exe_path}",
+        "compile_command": "/usr/bin/g++ -DONLINE_JUDGE -O2 -w -fmax-errors=3 -std=c++17 {src_path} -lm -o {exe_path}",
     },
     "run": {
         "command": "{exe_path}",
@@ -90,12 +90,12 @@ _cpp_lang_spj_compile = {
     "max_cpu_time": 10000,
     "max_real_time": 20000,
     "max_memory": 1024 * 1024 * 1024,
-    "compile_command": "/usr/bin/g++ -DONLINE_JUDGE -O2 -w -fmax-errors=3 -std=c++14 {src_path} -lm -o {exe_path}"
+    "compile_command": "/usr/bin/g++ -DONLINE_JUDGE -O2 -w -fmax-errors=3 -std=c++17 {src_path} -lm -o {exe_path}"
 }
 
 _cpp_lang_spj_config = {
     "exe_name": "spj-{spj_version}",
-    "command": "{exe_path} {in_file_path} {user_out_file_path}",
+    "command": "{exe_path} {in_file_path} {user_out_file_path} {jury_ans_file_path}",
     "seccomp_rule": "c_cpp"
 }
 

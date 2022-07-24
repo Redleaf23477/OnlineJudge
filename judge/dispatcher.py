@@ -417,12 +417,6 @@ class JudgeSampleTester(DispatcherBase):
     def judge(self):
         language = self.language
         sub_config = list(filter(lambda item: language == item["name"], SysOptions.languages))[0]
-        spj_config = {}
-        if self.problem.spj_code:
-            for lang in SysOptions.spj_languages:
-                if lang["name"] == self.problem.spj_language:
-                    spj_config = lang["spj"]
-                    break
 
         if language in self.problem.template:
             template = parse_problem_template(self.problem.template[language])
@@ -437,10 +431,10 @@ class JudgeSampleTester(DispatcherBase):
             "max_memory": 1024 * 1024 * self.problem.memory_limit,
             "test_case": self.test_case,
             "output": True,
-            "spj_version": self.problem.spj_version,
-            "spj_config": spj_config.get("config"),
-            "spj_compile_config": spj_config.get("compile"),
-            "spj_src": self.problem.spj_code,
+            "spj_version": None, #self.problem.spj_version,
+            "spj_config": None, #spj_config.get("config"),
+            "spj_compile_config": None, #spj_config.get("compile"),
+            "spj_src": None, #self.problem.spj_code,
             "io_mode": self.problem.io_mode
         }
 
